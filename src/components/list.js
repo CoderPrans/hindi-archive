@@ -19,7 +19,7 @@ function List({title}) {
 
     useEffect(() => {
 	setPage(1)
-    }, [title])
+    }, [title, media])
 
     if(isLoading) return <div>'Loading...'</div>
     if(error) return <div>{error.message}</div>
@@ -52,12 +52,12 @@ function List({title}) {
 	}
 	</div>
 	<button
-	    onClick={old => setPage(old - 1)}
+	    onClick={() => setPage(page - 1)}
 	    disabled={page === 1}>
 	    Prev Page
 	</button>
 	<button
-	    onClick={old => setPage(old + 1)}
+	    onClick={() => setPage(page + 1)}
 	    disabled={data.items.length < 19}>
 	    Next Page
 	</button>
@@ -67,13 +67,16 @@ function List({title}) {
 	display: block;
 	margin: 0 auto;
     }
-    div {
+    .items {
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	flex-wrap: wrap;
     }
-    p {
-	width: 200px;
+    .items p {
+        /*flex: <grow> <shrink> <baseWidth> */
+        flex: 1 1 200px;
+        flex: 0 1 200px;
+        margin: 20px;
     }
     `}</style>
     </>

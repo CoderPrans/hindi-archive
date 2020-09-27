@@ -1,12 +1,19 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 function Navbar({setPage}) {
     return (
     <>
 	<ul>
-	    <li onClick={() => setPage('Home')}>Home</li>
-	    <li onClick={() => setPage('About')}>About</li>
-	    <li onClick={() => setPage('Contact')}>Contact</li>
+	    <Link to='/'>
+		<li>Home</li>
+	    </Link>
+	    <Link to='/about'>
+		<li>About</li>
+	    </Link>
+	    <Link to='/contact'>
+		<li>Contact</li>
+	    </Link>
 	</ul>
 	<style jsx>{`
 	    ul {
@@ -19,7 +26,7 @@ function Navbar({setPage}) {
                 list-style-type: none;
                 text-decoration: underline;
                 margin: 10px 20px;
-                font-size: 13px;
+                font-size: 14px;
                 color: black;
                 padding: 2px;
                 cursor: pointer;
