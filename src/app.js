@@ -21,20 +21,21 @@ const App = function() {
 	</Router>
 
 	<style jsx>{`
-h1 {
-    text-align: center;
-    margin: 20px;
-} 
-.content {
-    text-align: center;
-    background-color: #ddd;
-    padding: 20px;
-}
-.App {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    height: 100%;
-}
+	h1 {
+	    text-align: center;
+	    margin: 20px;
+	} 
+	.content {
+	    text-align: center;
+	    background-color: #ddd;
+	background-image: linear-gradient(135deg, #afffcf, #afcfff);
+	    padding: 20px;
+	}
+	.App {
+	    display: grid;
+	    grid-template-rows: auto 1fr;
+	    height: 100%;
+	}
 	`}</style>
     </>
     )

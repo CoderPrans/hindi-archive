@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {useQuery} from 'react-query'
+import Tabs from './tabs.js'
 
 async function fetchData(key, title, media, page) {
     const baseUrl = 'https://archive-flask.herokuapp.com/'
@@ -21,25 +22,20 @@ function List({title}) {
 	setPage(1)
     }, [title, media])
 
-    if(isLoading) return <div>'Loading...'</div>
-    if(error) return <div>{error.message}</div>
+    if(isLoading) return (<>
+			      <Tabs media={media} setMedia={setMedia}/>
+	<div>'Loading...'</div>
+    </>)
+    if(error) return (<>
+	<Tabs media={media} setMedia={setMedia} />
+	<div>{error.message}</div>
+    </>)
 
     const imgUrl = 'https://archive.org/services/img/'
     console.log(data)
     return (
     <>
-	<div className="tabs">
-	    {
-		['texts', 'audio', 'image', 'movies'].map(t => (
-		    <button
-			key={t}
-			style={{background: media == t ? 'red': ''}}
-		        onClick={() => setMedia(t)}>
-			{t}
-		    </button>
-		))
-	    }
-	</div>
+	<Tabs media={media} setMedia={setMedia} />
 	<p>{title} has {data.numFound} items</p>
 	<div className="items">
 	{
