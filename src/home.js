@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import List from './components/list.js'
-import Tabs from './components/tabs.js'
 import About from './about.js'
 import Contact from './contact.js'
 import {Switch, Link, Route, useLocation, useHistory} from 'react-router-dom'
@@ -37,15 +36,13 @@ function Home() {
 	    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABL0lEQVRIie3UsUpDQRCF4U9RREwlWCqonZYpxE4fwDfwCQJJa5VagkVArPQJRBstU6axsLHUQgtBEQRtVMQiWuwGJCZk15BGPHBZLnf2/DN7Z5Z/DaBJVNDEI95xjX0UBzVfwS0+cY5d1HCIZ7Swh/Hfmr/hCqtdvhcirIUjjOSYT8bMLzHdJ7YsVFjKAVRiZt0y76YGHjCWCmgKZ56qDaGK9V4Box3vSzjLALRjl1MBU3jNALzEtZAKuMd8BmAhrnepGw6EPu+ZUYeqQlPMpQKKcUMtIXYWTzhJNW9rL0LKfcwv8IHFXMA4joX2awitOIMJocuqQuYfMaaeCyCMf0kYos+Op4XTmHl9EAhhQteE49rCpp8/dGBIira/QbIuvxy1K9kZFkA0vxkm4A/qCzQ5RK3c4OI+AAAAAElFTkSuQmCC"/>
 	    </button>
 	</form>
-	    {/* TODO: delete this later
-	    <Tabs media={'texts'} setMedia={() => console.log('uh oh...')} />
- ... */}
+
 	<Switch>
 	<Route exact={true} path="/">
 	    <div className="welcome">
 		<p className="message">
 		    हिन्दी archive मे आपका स्वागत है । <br />
-		    👆 उपर box पे keyword लिख के search करें ।
+		     उपर box पे keyword लिख के search करें ।
 		</p>
 	    </div>
 	</Route>

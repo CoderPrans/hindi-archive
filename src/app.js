@@ -28,7 +28,7 @@ const App = function() {
 	.content {
 	    text-align: center;
 	    background-color: #ddd;
-	background-image: linear-gradient(135deg, #afffcf, #afcfff);
+	background-image: linear-gradient(135deg, #bfffcf, #bfcfff);
 	    padding: 20px;
 	}
 	.App {

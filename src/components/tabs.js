@@ -7,7 +7,7 @@ export default function Tabs({media, setMedia}) {
 	    ['texts', 'audio', 'image', 'movies'].map(t => (
 	    <button
 		key={t}
-		className={media == t ? 'active-tab' : 'tab'}
+		className={media == t ? `active ${t}` : 'tab'}
 		onClick={() => setMedia(t)}>
 		{t}
 	    </button>
@@ -16,30 +16,46 @@ export default function Tabs({media, setMedia}) {
     <style jsx>{`
 	.tabs {
 	    margin: 30px auto;
-	    padding: 5px 0;
-	    width: clamp(270px, 40vw, 370px);
-	    background-color: #ededed;
+	    padding: 5px;
+	    width: clamp(300px, 30vw, 400px);
+	    background-color: #f3f3f3;
 	    display: flex;
 	    justify-content: space-evenly;
-	    border-radius: 10px;
+	    border-radius: 12px;
 	}
 	.tabs button {
 	    cursor: pointer;
 	    font-size: 16px;
 	    color: #000;
-            transition: width 1s;
+	    height: 40px;
+            transition: width 0.5s;
+            
 	}
 	.tab {
 	    background: transparent;
 	    border: none;
+            width: 60px;
+            padding: 10px;
 	}
-	.active-tab{
+	.active{
 	    background: #dadada;
-	    border-radius: 10px;
+	    border-radius: 12px;
 	    border: none;
-	    height: 100%;
-	    padding: 8px 21px;
+	    /*padding: 8px 21px;*/
+            width: 90px;
 	}
+        .texts {
+            background: rgba(250, 171, 60, 0.5);
+        }
+        .audio {
+            background: rgba(0, 173, 239, 0.5);
+        }
+        .image {
+            background: rgba(170, 153, 201, 0.5);
+        }
+        .movies {
+            background: rgba(241, 100, 75, 0.5);
+        }
     `}</style>
     </div>
     )

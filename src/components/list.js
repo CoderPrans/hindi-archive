@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useQuery} from 'react-query'
 import Tabs from './tabs.js'
+import Item from './item.js'
 
 async function fetchData(key, title, media, page) {
     const baseUrl = 'https://archive-flask.herokuapp.com/'
@@ -23,7 +24,7 @@ function List({title}) {
     }, [title, media])
 
     if(isLoading) return (<>
-			      <Tabs media={media} setMedia={setMedia}/>
+	<Tabs media={media} setMedia={setMedia}/>
 	<div>'Loading...'</div>
     </>)
     if(error) return (<>
@@ -31,19 +32,15 @@ function List({title}) {
 	<div>{error.message}</div>
     </>)
 
-    const imgUrl = 'https://archive.org/services/img/'
     console.log(data)
     return (
     <>
 	<Tabs media={media} setMedia={setMedia} />
-	<p>{title} has {data.numFound} items</p>
+	<h2 style={{display: 'inline'}}>"{title}"</h2><span> has {data.numFound} items</span>
 	<div className="items">
 	{
 	    data.items.map(i => (
-		<p key={i.identifier}>
-		    <img src={`${imgUrl}${i.identifier}`}/>
-		    {i.title}
-		</p>
+		<div key={i.identifier}><Item>{i}</Item></div>
 	    ))
 	}
 	</div>
@@ -59,21 +56,18 @@ function List({title}) {
 	</button>
 
     <style jsx>{`
-    img {
-	display: block;
-	margin: 0 auto;
-    }
-    .items {
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-    }
-    .items p {
-        /*flex: <grow> <shrink> <baseWidth> */
-        flex: 1 1 200px;
-        flex: 0 1 200px;
-        margin: 20px;
-    }
+	.items {
+	    display: flex;
+	    justify-content: space-around;
+	    flex-wrap: wrap;
+	}
+	.items div {
+	    /*flex: <grow> <shrink> <baseWidth> */
+	    flex: 1 1 200px;
+	    flex: 0 1 200px;
+	    margin: 20px;
+            padding: 10px;
+	}
     `}</style>
     </>
     )
