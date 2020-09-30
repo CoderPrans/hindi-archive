@@ -45,11 +45,14 @@ function List({title}) {
 	}
 	</div>
 	<button
+	    className="page-prev"
 	    onClick={() => setPage(page - 1)}
 	    disabled={page === 1}>
 	    Prev Page
 	</button>
+	{page}
 	<button
+	    className="page-next"
 	    onClick={() => setPage(page + 1)}
 	    disabled={data.items.length < 19}>
 	    Next Page
@@ -68,6 +71,12 @@ function List({title}) {
 	    margin: 20px;
             padding: 10px;
 	}
+        .page-prev, .page-next {
+            border-radius: 5px;
+            margin: 20px;
+            border: 1px solid #777;
+            padding: 6px 10px;
+        }
     `}</style>
     </>
     )

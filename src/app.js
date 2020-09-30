@@ -10,7 +10,10 @@ const App = function() {
 	<div className="App">
 	    <div className="header">
 	    <Navbar/>
-	    <h1>हिन्दी archive</h1>
+		<h1><span style={{
+			      fontSize: '45px',
+			      padding: '10px'
+			  }}>हिन्दी</span>archive</h1>
 	    </div>
 	    <div className="content">
 	    <Route path="/">
@@ -24,6 +27,7 @@ const App = function() {
 	h1 {
 	    text-align: center;
 	    margin: 20px;
+            font-weight: normal;
 	} 
 	.content {
 	    text-align: center;
