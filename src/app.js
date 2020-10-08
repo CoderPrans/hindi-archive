@@ -23,7 +23,7 @@ const App = function() {
 	</div>
 	</Router>
 
-	<style jsx>{`
+	<style jsx global>{`
 	h1 {
 	    text-align: center;
 	    margin: 20px;
@@ -39,6 +39,15 @@ const App = function() {
 	    display: grid;
 	    grid-template-rows: auto 1fr;
 	    height: 100%;
+	}
+	.svg-icon path,
+	.svg-icon polygon,
+	.svg-icon rect {
+            fill: rgba(40, 40, 40, 0.8);
+	}
+	.svg-icon circle {
+            stroke: rgba(40, 40, 40, 0.8);
+	    stroke-width: 1;
 	}
 	`}</style>
     </>
