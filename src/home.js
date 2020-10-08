@@ -33,7 +33,15 @@ function Home() {
 	    onChange={e => setTitle(e.target.value)}
 	    placeholder='Search'/>
 	    <button type="submit">
-	    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABL0lEQVRIie3UsUpDQRCF4U9RREwlWCqonZYpxE4fwDfwCQJJa5VagkVArPQJRBstU6axsLHUQgtBEQRtVMQiWuwGJCZk15BGPHBZLnf2/DN7Z5Z/DaBJVNDEI95xjX0UBzVfwS0+cY5d1HCIZ7Swh/Hfmr/hCqtdvhcirIUjjOSYT8bMLzHdJ7YsVFjKAVRiZt0y76YGHjCWCmgKZ56qDaGK9V4Box3vSzjLALRjl1MBU3jNALzEtZAKuMd8BmAhrnepGw6EPu+ZUYeqQlPMpQKKcUMtIXYWTzhJNW9rL0LKfcwv8IHFXMA4joX2awitOIMJocuqQuYfMaaeCyCMf0kYos+Op4XTmHl9EAhhQteE49rCpp8/dGBIira/QbIuvxy1K9kZFkA0vxkm4A/qCzQ5RK3c4OI+AAAAAElFTkSuQmCC"/>
+		{		/*	    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABL0lEQVRIie3UsUpDQRCF4U9RREwlWCqonZYpxE4fwDfwCQJJa5VagkVArPQJRBstU6axsLHUQgtBEQRtVMQiWuwGJCZk15BGPHBZLnf2/DN7Z5Z/DaBJVNDEI95xjX0UBzVfwS0+cY5d1HCIZ7Swh/Hfmr/hCqtdvhcirIUjjOSYT8bMLzHdJ7YsVFjKAVRiZt0y76YGHjCWCmgKZ56qDaGK9V4Box3vSzjLALRjl1MBU3jNALzEtZAKuMd8BmAhrnepGw6EPu+ZUYeqQlPMpQKKcUMtIXYWTzhJNW9rL0LKfcwv8IHFXMA4joX2awitOIMJocuqQuYfMaaeCyCMf0kYos+Op4XTmHl9EAhhQteE49rCpp8/dGBIira/QbIuvxy1K9kZFkA0vxkm4A/qCzQ5RK3c4OI+AAAAAElFTkSuQmCC"/> */}
+
+<svg className="svg-icon" viewBox="0 0 20 20">
+<path fill="none" d="M19.129,18.164l-4.518-4.52c1.152-1.373,1.852-3.143,1.852-5.077c0-4.361-3.535-7.896-7.896-7.896
+c-4.361,0-7.896,3.535-7.896,7.896s3.535,7.896,7.896,7.896c1.934,0,3.705-0.698,5.078-1.853l4.52,4.519
+c0.266,0.268,0.699,0.268,0.965,0C19.396,18.863,19.396,18.431,19.129,18.164z M8.567,15.028c-3.568,0-6.461-2.893-6.461-6.461
+s2.893-6.461,6.461-6.461c3.568,0,6.46,2.893,6.46,6.461S12.135,15.028,8.567,15.028z"></path>
+</svg>
+		
 	    </button>
 	</form>
 
@@ -79,7 +87,7 @@ function Home() {
           [type=submit] {
 	    padding: 8px;
 	    display: flex;
-	    align-items: flex-end;
+	    align-items: center;
 	    background: transparent;
 	    border: none;
 	    cursor: pointer;
@@ -108,6 +116,22 @@ function Home() {
 	    border-radius: 7px;
 	    font-size: 17px;
 	  }
+         .svg-icon {
+	    width: 1.5em;
+	    height: 1.5em;
+	}
+
+	.svg-icon path,
+	.svg-icon polygon,
+	.svg-icon rect {
+	    fill: #4691f6;
+	}
+
+	.svg-icon circle {
+	    stroke: #4691f6;
+	    stroke-width: 1;
+	}
+
         `}</style>
     </>
     )
