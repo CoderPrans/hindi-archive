@@ -61,15 +61,19 @@ function List({title}) {
     <style jsx>{`
 	.items {
 	    display: flex;
-	    justify-content: space-around;
+	    justify-content: center;
 	    flex-wrap: wrap;
 	}
 	.items div {
 	    /*flex: <grow> <shrink> <baseWidth> */
-	    flex: 1 1 200px;
-	    flex: 0 1 200px;
-	    margin: 20px;
-            padding: 10px;
+	    /*flex: 1 1 220px;*/
+	    flex: 0 1 230px;
+	    margin: 25px;
+	    background: #f2f2f2;
+	    border: 1px solid #ddd;
+	    border-radius: 12px;
+	    overflow: hidden;
+	    height: 100%;
 	}
         .page-prev, .page-next {
             border-radius: 5px;
