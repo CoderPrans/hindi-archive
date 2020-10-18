@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {useQuery} from 'react-query'
 import Tabs from './tabs.js'
 import Item from './item.js'
+import Pages from './pages.js'
 
 async function fetchData(key, title, media, page) {
     const baseUrl = 'https://archive-flask.herokuapp.com/'
@@ -44,19 +45,7 @@ function List({title}) {
 	    ))
 	}
 	</div>
-	<button
-	    className="page-prev"
-	    onClick={() => setPage(page - 1)}
-	    disabled={page === 1}>
-	    Prev Page
-	</button>
-	{page}
-	<button
-	    className="page-next"
-	    onClick={() => setPage(page + 1)}
-	    disabled={data.items.length < 19}>
-	    Next Page
-	</button>
+	<Pages page={page} setPage={setPage} numFound={data.numFound} />
 
     <style jsx>{`
 	.items {
@@ -69,18 +58,12 @@ function List({title}) {
 	    /*flex: 1 1 220px;*/
 	    flex: 0 1 230px;
 	    margin: 25px;
-	    background: #f2f2f2;
+	    background: #fafafa;
 	    border: 1px solid #ddd;
 	    border-radius: 12px;
 	    overflow: hidden;
 	    height: 100%;
 	}
-        .page-prev, .page-next {
-            border-radius: 5px;
-            margin: 20px;
-            border: 1px solid #777;
-            padding: 6px 10px;
-        }
     `}</style>
     </>
     )
