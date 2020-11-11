@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Navbar from './components/navbar.js'
+//import Navbar from './components/navbar.js'
 import Home from './home.js'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
@@ -9,7 +9,7 @@ const App = function() {
 	<Router>
 	<div className="App">
 	    <div className="header">
-	    <Navbar/>
+		{/*<Navbar/>*/}
 		<h1><span style={{
 			      fontSize: '45px',
 			      padding: '10px'
