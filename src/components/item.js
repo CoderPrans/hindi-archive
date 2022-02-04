@@ -8,15 +8,23 @@ function Item({children}) {
     return (
 	<>
 	<div>
-	    <img className="item-image"
-	       src={`${imgUrl}${c.identifier}`}/>
-	    <p className="title"><b>{c.title}</b></p>
-	    <p className="creator">{
+	    {/* <img className="item-image" */}
+	    {/*    src={`${imgUrl}${c.identifier}`}/> */}
+          <div className="image-box" style={{backgroundImage: `url(${imgUrl}${c.identifier})`}}/>
+	  <p className="title" title={c.title}>
+            <b>{c.title
+		 ? c.title.length > 30
+			? `${c.title.slice(0, 30)}...`
+			: c.title
+		    : ''
+}</b>
+          </p>
+	    <p className="creator" title={c.creator}>{
 		c.creator
 		    ? c.creator
 		    : ''
 	    }</p>
-	    <p className="desc">{
+	    <p className="desc" title={c.description}>{
 		c.description
 		 ? c.description.length > 70
 			? `${c.description.slice(0, 70)}...`
@@ -57,18 +65,24 @@ function Item({children}) {
 		font-size: 20px;
 	    }
 	    .title {
-                font-size: 18px;
 		text-align: center;
 	    }
             div p {
                 margin: 10px;
             }
-	    .item-image {
+            .image-box {
+                height: 200px;
                 width: 100%;
-		display: block;
-		margin: 0 auto;
-                margin-bottom: 8px;
-	    }
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+	    /* .item-image { */
+            /*     width: 100%; */
+	    /* 	display: block; */
+	    /* 	margin: 0 auto; */
+            /*     margin-bottom: 8px; */
+	    /* } */
          .svg-icon {
 	    width: 1.5em;
 	    height: 1.5em;

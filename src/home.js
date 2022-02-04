@@ -1,8 +1,9 @@
-import React, {useState} from 'react'
-import List from './components/list.js'
-import About from './about.js'
-import Contact from './contact.js'
-import {Switch, Link, Route, useLocation, useHistory} from 'react-router-dom'
+import React, {useState, useEffect, useRef} from 'react';
+import List from './components/list.js';
+import About from './about.js';
+import Contact from './contact.js';
+// import Tabs from './components/tabs.js';
+import {Switch, Link, Route, useLocation, useHistory} from 'react-router-dom';
 import {QueryCache, ReactQueryCacheProvider} from 'react-query'
 
 const queryCache = new QueryCache()
@@ -14,8 +15,13 @@ function useUrlQuery() {
 function Home() {
     const [title, setTitle] = useState('')
 
+    const ref = useRef();
     const history = useHistory()
 
+    useEffect(() => {
+        ref.current.focus();
+    }, []);
+    
     function handleSubmit(e) {
 	e.preventDefault()
 	history.push(`/list?title=${title}`)
@@ -29,6 +35,7 @@ function Home() {
 	<form
 	    onSubmit={handleSubmit}>
 	<input
+        ref={ref}
 	    value={title}
 	    onChange={e => setTitle(e.target.value)}
 	    placeholder='Search'/>
@@ -95,7 +102,7 @@ function Home() {
 	    opacity: 0.5;
 	  }
 	  form input:hover, form input:focus{
-	    box-shadow: 0 0 25px #a8a8a8;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	    outline: none;
 	  }
 	  form, input {

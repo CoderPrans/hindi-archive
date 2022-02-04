@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 //import Navbar from './components/navbar.js'
-import Home from './home.js'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import Home from './home.js';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 const App = function() {
     return (

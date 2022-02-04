@@ -15,34 +15,34 @@ export default function Tabs({media, setMedia}) {
 	}
     <style jsx>{`
 	.tabs {
-	    margin: 30px auto;
-	    padding: 5px;
-	    width: clamp(300px, 30vw, 400px);
+	    margin: 30px auto 15px auto;
+	    /* padding: 5px; */
+	    /* width: clamp(300px, 30vw, 400px); */
+            width: 
 	    background-color: #f3f3f3;
-	    display: flex;
-	    justify-content: space-evenly;
+	    /* display: flex; */
+	    /* justify-content: space-evenly; */
 	    border-radius: 12px;
 	}
 	.tabs button {
 	    cursor: pointer;
 	    font-size: 16px;
+	    border-radius: 12px;
 	    color: #000;
 	    height: 40px;
-            transition: width 0.5s;
-            
+            transition: background 0.5s;
+            padding: 2px 20px;
 	}
 	.tab {
 	    background: transparent;
 	    border: none;
-            width: 60px;
-            padding: 10px;
+            /* width: 60px; */
+            /* padding: 10px; */
 	}
 	.active{
-	    background: #dadada;
-	    border-radius: 12px;
 	    border: none;
 	    /*padding: 8px 21px;*/
-            width: 90px;
+            /* width: 90px; */
 	}
         .texts {
             background: rgba(250, 171, 60, 0.5);
